@@ -1,0 +1,93 @@
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*============ DASHBOARD ==================*/
+#body-row {
+	margin-left:0;
+	margin-right:0;
+}
+.sidebar {
+	min-height: 100vh;   
+  background: #722F37;
+  width: 200px;
+}
+.sidebar-collapsed {
+	width: 70px !important;
+}
+.sidebar-separator-title {
+	background: #722F37;
+	height: 20px;
+}
+.dropdown-toggle{
+  color: #ffffff !important;
+}
+.first-name{
+  color: #ffffff;
+}
+#collapse-icon {
+  color: #ffffff;
+}
+.toggleIt:hover{
+  background: none !important;
+}
+.sidebar a{
+  padding: 20px 5px 15px 35px;
+  margin-bottom: 10px;
+}
+.dashboard-link {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.dashboard-link:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.sidebar a .fa{
+  font-size: 1.5rem;
+  display: inline-block;
+}
+.dashboard-link:hover{
+  text-decoration: none;
+  color: #ffffff;
+}
+.active{
+  text-decoration: none;
+  color: #ffffff;
+}
+.menu-collapsed:hover{
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/*=========PROFILE=============*/
+.profile-form{
+  width: 100%;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #17202A;
+}
+.profile-form:focus{
+  border-color: #f00;
+}
+.profile-pic{
+  width : 5rem;
+}
+
+/*============ MEDIA QUERIES ===============*/
+@media (max-width: 500px) {
+  .sidebar{
+    width: 150px;
+  }
+  .sidebar a{
+    padding: 10px 5px 15px 20px;
+  }
+  .dashboard-link{
+    font-size: .9rem;
+  }
+  .sidebar a .fa{
+    font-size: 1rem;
+  }
+}
+
