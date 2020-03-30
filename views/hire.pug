@@ -1,0 +1,75 @@
+include includes/header.pug 
+block content
+  link(rel='stylesheet' , href='/stylesheets/new-style.css')
+  body
+    section
+      div(class="container pt-5")
+        div(class="hire")
+          h2(class="text-center justify-content-center heading") Hire A Talent
+          hr.underline
+          div(class="row pt-4")
+            div(class="col-md-7 hirer")
+              p(class="text-justify justify-content-center pt-5 para pr-3") At Ace Africa, we are posed at delivering the best 
+                | in effectiveness and efficiency. Be it with the services we render, or the personnels we send to be recruited.
+                | Our personnels have proven to stand out, in terms of innovation, creativity, professionalism, 
+                | and efficiency. Excellence has always has been our watchword in producing these group of talents.
+                | Need to hire one?
+            div(class="col-md-5 shadow form")
+              form(method="POST" class="align")
+                div.div
+                  p
+                    label(for="role") Role:
+                    input(type="text" class="form-control role" name="role" id="role")
+                  p
+                    label(for="total") Total:
+                    input(type="text" class="form-control total" name="total" id="total")
+                  p
+                    label(for="organization-name") Name of Organization:
+                    input(type="text" class="form-control name" name="organizationName" id="organizationName")
+                  p
+                    label(for="duties") Duties to Perform:
+                    textarea(name="duties", cols="70", rows="5" type="text" class="form-control")
+                    div(class="text-center justify-content-center")
+                      button(type="submit" class="mt-3 mb-3 btn main-btn") Hire
+                      if hirer
+                        p Thank you #{hirer.organizationName} for choosing us, we will get back to you shortly 
+          div(class="pt-4")
+            h2(class="text-center justify-content-center heading pt-5") Need An App?
+            hr.underline
+            div(class="row pt-4 mb-5")
+              div(class="col-md-5 bottom shadow form")
+                form(method="POST")
+                  div.div 
+                    p
+                      label(for="type") Type:
+                      input(type="text" class="form-control type" name="type" id="type")
+                    p 
+                      label(for="target") Target:
+                      input(type="text" class="form-control target" name="target" id="target") 
+                    p
+                      label(for="budget") Minimum Budget:
+                      input(type="text" class="form-control budget" name="budget" id="budget")
+                    p
+                      label(for="duration") Project Duration:
+                      input(type="text" class="form-control duration" name="duration" id="duration")
+                    p
+                      label(for="business") Business Name:
+                      input(type="text" class="form-control new-name" name="businessName" id="businessName")
+                    p
+                      label(for="location") Location:
+                      input(type="text" class="form-control location" name="location" id="location")
+                      div(class="text-center justify-content-center")
+                        button(type="submit" class="mt-4 mb-3 btn main-btn") Apply for an App
+                        if project
+                          p Thank you #{project.businessName} for choosing us, we will get back to you shortly
+              div(class="col-md-7 top col-sm-12")
+                p(class="text-justify justify-content-center pt-5 para pl-3") As part of the excellence in service we provide, 
+                  | we deliver top-notch applications as part of the services we render. We have built a strong clientele
+                  | with some of our partners, due to the excellent applications, that has given them much profit, we 
+                  | have built for them. Why waiting, when you can always call and trust us to deliver
+              
+
+
+
+    include includes/footer.pug 
+    script(src="/js/validation/hire-validation.js" type="module")

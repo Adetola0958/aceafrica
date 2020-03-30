@@ -120,7 +120,73 @@ export const verifyPassword = (a , b) => {
  * @return[Object] An object specifying a message an a value after validation
 */ 
 export const validateMobile = (val) => {
-	let passPattern = /(080|070|081|090\d){8}/
+	let passPattern = /(080|070|081|090)\d{8}/
+	try { 
+		if ( String(val).match(passPattern)) {
+	        return { 
+		        name : "Matched" , 
+		        value : val.trim() 
+	        } 
+		}else {
+			throw {
+				name : "Please provide a valid mobile number" , 
+				value : null 
+			}
+		}
+	}catch(err) {
+		return {
+			name : err.name , 
+			value : err.value 
+		}
+	}
+} 
+
+export const validateNames = (val) => { 
+    const namePattern = /^[\wàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛäëïöüÿÄËÏÖÜŸåÅæÆãñõÃÑÕçÇðÐøØœšŠŒß¿¡]{2,24}[_ \-.]{1}[\w àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛäëïöüÿÄËÏÖÜŸåÅæÆãñõÃÑÕçÇðÐøØœšŠŒß¿¡\']{1,32}$/ 
+	try {
+		if ( String(val).match(namePattern)) {
+	        return {
+		        name : "Matched" , 
+		        value : val.trim() 
+	        } 
+		}else {
+			throw {
+				name : "Please provide a valid name" , 
+				value : null 
+			}
+		}
+	}catch(err) {
+		return {
+			name : err.name , 
+			value : err.value 
+		}
+	}
+} 
+
+export const validateAmount = (val) => {
+	let passPattern = /^\#?\-?([1-9]{1}[0-9]{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))$|^\-?\$?([1-9]{1}\d{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))$|^\(\$?([1-9]{1}\d{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))\)$/
+	try { 
+		if ( String(val).match(passPattern)) {
+	        return { 
+		        name : "Matched" , 
+		        value : val.trim() 
+	        } 
+		}else {
+			throw {
+				name : "Please provide a valid mobile number" , 
+				value : null 
+			}
+		}
+	}catch(err) {
+		return {
+			name : err.name , 
+			value : err.value 
+		}
+	}
+} 
+
+export const validateDuration = (val) => {
+	let passPattern = /[0-9]\s*[a-zA-Z]/
 	try { 
 		if ( String(val).match(passPattern)) {
 	        return { 

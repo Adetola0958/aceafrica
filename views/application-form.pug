@@ -1,0 +1,59 @@
+include includes/header.pug 
+block content
+  link(rel='stylesheet' , href='/stylesheets/new-style.css')
+  body
+    section
+      div.container.pt-5 
+        div.apply 
+          h2.text-center.justify-content-center.heading Apply Into Our Programs
+          hr.underline
+          div(class="col-md-12")
+            div(class="row pt-4")
+              div(class="col-md-7 pt-5")
+                p.para At Ace Africa, we have affordable programs to join in and study. We have professionals that 
+                  | handle these courses, thereby grooming you to be world high class flyers. Venture into any of 
+                  | our programs, and begin to explore the tech world
+                p.mb-0.note Note:
+                ul.mt-o
+                  li The program is a paid programme; 50% payment before the start of program, and remaining 
+                    | 50% after the first month of the ongoing program.
+                  li The class trainings and lectures hold in Lagos, but online lectures will be offered to 
+                    | those who don't stay in Lagos. Also, a weekend, once a month (Friday - Sunday), will 
+                    | be dedicated for those outside Lagos to travel in, for face to face training with our professionals.  
+                    | Accomodation is optional for this.
+                  li Accomodation is optional. Extra charges are included to those that would want to be housed in our 
+                    | facility.
+                  li You are implored to please come with your learning tools (laptop, most important).
+                p.para.pt-5 Please feel free to explore our programs, once you have agreed to our terms and conditions
+              div.col-md-5.shadow.form  
+                form(method="POST")
+                  div.div
+                    p
+                      label(for="email") Email:
+                      input(type="email" class="form-control email" name="email" id="email")
+                    p
+                      label(for="telephone") Telephone:
+                      input(type="tel" class="form-control telephone" name="telephone" id="telephone")
+                    p
+                      label(for="nature") Program:
+                      select(type="text" class="form-control mb-2" name="program" id="program")
+                    p
+                      span(for="nature") Housing:
+                      select( class="form-control mb-2" name="housing" id="housing")
+                        option(value="") --Start--
+                        option(value= "yes") Yes
+                        option(value= "no") No
+                    p
+                      label(for="nature") Duration:
+                      input(type="text" class="form-control mb-2" name="duration" id="duration")
+                    p
+                      label(for="nature") Cost:
+                      input(type="text" class="form-control mb-2" name="cost" id="cost")
+                    p
+                      label(for="nature") Courses:
+                      input(type="text" class="form-control mb-2" name="courses" id="courses")
+                      div(class="text-center justify-content-center")
+                        button(type="submit" class="mt-3 mb-3 btn main-btn") Apply
+                    
+    include includes/footer.pug 
+    script(src="/js/validation/application-validation.js" type="module")

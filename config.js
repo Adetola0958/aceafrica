@@ -4,7 +4,7 @@
 const dotenv = require('dotenv').config() 
 const MONGO_URL = process.env.MONGO_DEVELOPMENT_URL
 const MONGO_OPTIONS = {
-	URL : "mongodb://127.0.0.1:27017/agricstore", 
+	URL : "mongodb://127.0.0.1:27017/acesite", 
     OPTIONS : {
 	    useNewUrlParser : true , 
 	    useCreateIndex : true , 

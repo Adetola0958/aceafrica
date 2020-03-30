@@ -15,7 +15,7 @@ const MongoDBStore = require('connect-mongodb-session')(session)
 const indexRouter = require('./routes/index');
 const app = express();
 const store = new MongoDBStore({
-  uri :"mongodb://127.0.0.1:27017/agricstore", 
+  uri :"mongodb://127.0.0.1:27017/acesite", 
   collection : "sessions"
 }) 
 // view engine setup
@@ -66,7 +66,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 const CONFIG = { 
-	uri : "mongodb://127.0.0.1:27017/agricstore" , 
+	uri : "mongodb://127.0.0.1:27017/acesite" , 
   OPTIONS : { 
     useNewUrlParser : true , 
     useCreateIndex : true , 
@@ -76,7 +76,7 @@ const CONFIG = {
     keepAliveInitialDelay : 3e6
   }
 }
-let mongoUrl = "mongodb://127.0.0.1:27017/agricstore"
+let mongoUrl = "mongodb://127.0.0.1:27017/acesite"
 
 //let mongoUrl = "mongodb+srv://adeleke:2421994ade@naija-swag-k5j0g.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(CONFIG.uri, CONFIG.OPTIONS) 

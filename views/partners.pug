@@ -1,0 +1,42 @@
+include includes/header.pug 
+block content
+  link(rel='stylesheet' , href='/stylesheets/new-style.css')
+  body
+    section
+      div(class="container pt-5")
+        div(class="partners")
+          h2.text-center.justify-content-center.heading Our Partners
+          hr.underline
+          p.text-muted.text-center.justify-content-center.subtitle Join our partners program
+          div(class="col-md-12")
+            div(class="row pt-4")
+              div(class="col-md-7")
+                p(class="text-justify justify-content-center pt-5 para") At Ace Africa, we are posed at delivering the best 
+                  | in effectiveness and efficiency. Be it with the services we render, or the personnels we send to be recruited.
+                  | Our personnels have proven to stand out, in terms of innovation, creativity, professionalism, 
+                  | and efficiency. Excellence has always has been our watchword in producing these group of talents.
+                  | Need to hire one?
+              div(class="col-md-5 shado form")
+                form(method="POST" class="shadow pr-3 pl-3")
+                  div.div
+                    p
+                      label(for="organization-name") Name of Organization:
+                      input(type="text" class="form-control name" name="organizationName" id="organizationName")
+                    p
+                      label(for="nature") Nature:
+                      input(type="text" class="form-control nature" name="nature" id="nature")
+                    p
+                      label(for="address") Address:
+                      input(type="text" class="form-control address" name="address" id="address")
+                    p
+                      label(for="nature") Telephone:
+                      input(type="tel" class="form-control telephone" name="telephone" id="telephone")
+                    p
+                      label(for="description") Partnership Description:
+                      textarea(name="description", cols="70", rows="5" type="text" class="form-control")
+                      div(class="text-center justify-content-center")
+                        button(type="submit" class="mt-3 mb-3 btn main-btn") Submit
+
+
+    include includes/footer.pug
+    script(src="/js/validation/partner-validation.js" type="module")
