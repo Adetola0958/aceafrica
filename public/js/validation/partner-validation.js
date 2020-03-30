@@ -15,7 +15,6 @@ let selector = e => document.querySelector(e)
 
 const organizationName = selector("#organizationName")
 const nature = selector("#nature")
-const address = selector("#address")
 const telephone = selector("#telephone")
 
 organizationName.addEventListener("focus" , event => {
@@ -61,29 +60,6 @@ nature.addEventListener("blur" , event => {
 	}catch(error) {
 		natureFeedBack.textContent = `${error.message} `
 		natureFeedBack.classList.add("blur-feedback-error")
-	}
-})
-
-address.addEventListener("focus" , event => {
-	const addFeedBack = selector(".address")
-	if (addFeedBack.classList.contains("blur-feedback-error")) {
-		addFeedBack.classList.remove("blur-feedback-error")
-	}
-	addFeedBack.style.borderColor = "blue"
-	addFeedBack.classList.add("focus-feedback")
-})
-address.addEventListener("blur" , event => {
-	const addFeedBack = selector(".address")
-	try {
-		const addValue = validateNames(address.value.trim())
-		if ( addValue.value != null ) {
-			addFeedBack.style.borderColor = "green"
-		}else {
-			addFeedBack.style.borderColor = "red"
-		}
-	}catch(error) {
-		addFeedBack.textContent = `${error.message} `
-		addFeedBack.classList.add("blur-feedback-error")
 	}
 })
 

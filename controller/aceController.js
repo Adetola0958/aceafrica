@@ -4,6 +4,7 @@ const Ace = require("../model/ace")
 const Hire = require("../model/hire")
 const Project = require("../model/project")
 const Partner = require("../model/partner")
+const Application = require("../model/application")
 
 class App {
     getIndex = (req, res, next) => {
@@ -71,7 +72,7 @@ class App {
             })
             const newPartner = await partner.save()
             if(newPartner) {
-                res.render("congratulations")
+                res.render("partners", {title : "congratulations", partner : partner})
             }else {
                 res.redirect(303, "/partners" ({error : "You have not filled the form correctly"})) 
             }
@@ -81,6 +82,28 @@ class App {
     }
     getApplication = (req, res, next) => {
         res.render("application-form")
+    }
+    postApplication = async(req, res, next) => {
+        try{
+            const{email, telephone, program, housing, duration, cost, courses} = req.body
+            const applicant = new Application ({
+                email : email,
+                telephone : telephone,
+                program : program,
+                housing : housing,
+                duration : duration,
+                cost : cost,
+                courses : courses
+            })
+            const newApplicant = await applicant.save()
+            if(newApplicant) {
+                res.render("application-form", {title : "congratulations", applicant : applicant})
+            }else {
+                res.redirect(303, "/application" ({error : "You have not filled the form correctly"})) 
+            }
+        }catch {
+            res.render('/application' , {error : errors})  
+        }
     }
 }
 

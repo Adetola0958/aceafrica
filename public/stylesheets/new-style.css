@@ -43,8 +43,8 @@ body {
     border-bottom : 2px solid #3148BC;
     border-right: none;
     border-top: none;
-    /* font-size: 13px;
-    font-weight: 700; */
+    font-size: 13px;
+    font-weight: 700;
 }  
 .main-btn {
     border : 2px solid #3148BC;

@@ -7,7 +7,7 @@ const ApplicationSchema = new Schema({
     program : {type : String},
     housing : {type : String},
     duration : {type : String},
-    cost : {type : String, default : "#50,000"},
+    cost : {type : String},
     courses : {type : Array}
 })
 

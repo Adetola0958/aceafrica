@@ -3,7 +3,7 @@ block content
   link(rel='stylesheet' , href='/stylesheets/new-style.css')
   body
     section
-      div.container.pt-5 
+      div.container.pt-5.mb-5 
         div.apply 
           h2.text-center.justify-content-center.heading Apply Into Our Programs
           hr.underline
@@ -35,25 +35,32 @@ block content
                       label(for="telephone") Telephone:
                       input(type="tel" class="form-control telephone" name="telephone" id="telephone")
                     p
-                      label(for="nature") Program:
-                      select(type="text" class="form-control mb-2" name="program" id="program")
+                      span(for="program") Program:
+                      select(class="form-control" name="program" id="program")
+                        option(value="--Select--") --Select--
+                        option(value= "Web Development") Web Development 
+                        option(value= "Data Science") Data Science
+                        option(value= "Mobile Development") Mobile Development
+                        option(value= "Java & .NET") Java &amp; .NET
                     p
-                      span(for="nature") Housing:
-                      select( class="form-control mb-2" name="housing" id="housing")
-                        option(value="") --Start--
+                      span(for="housing") Housing:
+                      select(class="form-control" name="housing" id="housing")
+                        option(value="") --Select--
                         option(value= "yes") Yes
                         option(value= "no") No
                     p
-                      label(for="nature") Duration:
-                      input(type="text" class="form-control mb-2" name="duration" id="duration")
+                      label(for="duration") Duration:
+                      input(type="text" class="form-control" name="duration" id="duration")
                     p
-                      label(for="nature") Cost:
-                      input(type="text" class="form-control mb-2" name="cost" id="cost")
+                      label(for="cost") Cost:
+                      input(type="text" class="form-control" name="cost" id="cost")
                     p
-                      label(for="nature") Courses:
+                      label(for="courses") Courses:
                       input(type="text" class="form-control mb-2" name="courses" id="courses")
                       div(class="text-center justify-content-center")
                         button(type="submit" class="mt-3 mb-3 btn main-btn") Apply
+                        if applicant 
+                          p Congratulations #{applicant.email}, expect us at Ace Africa to get back to you as soon as possible
                     
     include includes/footer.pug 
     script(src="/js/validation/application-validation.js" type="module")

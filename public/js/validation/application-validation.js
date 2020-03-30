@@ -17,6 +17,10 @@ const email = selector("#email")
 const telephone = selector("#telephone")
 const housing = selector("#housing")
 const cost = selector("#cost")
+const program = selector("#program")
+const duration = selector("#duration")
+const courses = selector("#courses")
+
 
 telephone.addEventListener("focus" , event => {
 	const telFeedBack = selector(".telephone")
@@ -64,23 +68,82 @@ email.addEventListener("blur" , event => {
 	}
 })
 
-// PROGRAM
-let programArr = new Array("Web Development", "Data Science", "Mobile Development", "Java & .NET")
-
-//HOUSING
-let optionsArr = new Array("Yes", "No")
-
-
-// COST
-let webDevCost = new Array("#100,000", "#150,000")
-let datSciCost = new Array("#80,000", "#130,000")
-let mobDevCost = new Array("#180,000", "#230,000")
-let javCost    = new Array("#180,000", "#230,000")
-
 housing.addEventListener("change", () => {
-	if(housing.value === "yes") {
+	if(program.value === "Web Development" && housing.value === "yes") {
+		cost.value = "#150,000"
+		duration.value = "4 Months"
+		courses.value = "HTML 5, CSS 3, Bootstrap"
+	}else if (program.value === "Web Development" && housing.value === "no"){
 		cost.value = "#100,000"
-	}else if (housing.value === "no"){
+		duration.value = "4 Months"
+		courses.value = "HTML 5, CSS 3, Bootstrap"
+	}else if(program.value === "Data Science" && housing.value === "yes") {
+		cost.value = "#130,000"
+		duration.value = "3 Months"
+		courses.value = "Python etc."
+	}else if(program.value === "Data Science" && housing.value === "no") {
 		cost.value = "#80,000"
+		duration.value = "3 Months"
+		courses.value = "Python etc."
+	}else if(program.value === "Mobile Development" && housing.value === "yes") {
+		cost.value = "#230,000"
+		duration.value = "6 Months"
+		courses.value = "Kotlin, React Native, Flutter"
+	}else if(program.value === "Mobile Development" && housing.value === "no") {
+		cost.value = "#180,000"
+		duration.value = "6 Months"
+		courses.value = "Kotlin, React Native, Flutter"
+	}else if(program.value === "Java & .NET" && housing.value === "yes") {
+		cost.value = "#230,000"
+		duration.value = "6 Months"
+		courses.value = "Java etc"
+	}else if(program.value === "Java & .NET" && housing.value === "no") {
+		cost.value = "#180,000"
+		duration.value = "6 Months"
+		courses.value = "Java etc."
+	}else {
+		cost.value = "Select a program"
+		duration.value = "Select a program"
+		courses.value = "Select a program"
+	}
+})
+
+program.addEventListener("change", () => {
+	if(program.value === "Web Development" && housing.value === "yes") {
+		cost.value = "#150,000"
+		duration.value = "4 Months"
+		courses.value = "HTML 5, CSS 3, Bootstrap"
+	}else if (program.value === "Web Development" && housing.value === "no"){
+		cost.value = "#100,000"
+		duration.value = "4 Months"
+		courses.value = "HTML 5, CSS 3, Bootstrap"
+	}else if(program.value === "Data Science" && housing.value === "yes") {
+		cost.value = "#130,000"
+		duration.value = "3 Months"
+		courses.value = "Python etc."
+	}else if(program.value === "Data Science" && housing.value === "no") {
+		cost.value = "#80,000"
+		duration.value = "3 Months"
+		courses.value = "Python etc."
+	}else if(program.value === "Mobile Development" && housing.value === "yes") {
+		cost.value = "#230,000"
+		duration.value = "6 Months"
+		courses.value = "Kotlin, React Native, Flutter"
+	}else if(program.value === "Mobile Development" && housing.value === "no") {
+		cost.value = "#180,000"
+		duration.value = "6 Months"
+		courses.value = "Kotlin, React Native, Flutter"
+	}else if(program.value === "Java & .NET" && housing.value === "yes") {
+		cost.value = "#230,000"
+		duration.value = "6 Months"
+		courses.value = "Java etc"
+	}else if(program.value === "Java & .NET" && housing.value === "no") {
+		cost.value = "#180,000"
+		duration.value = "6 Months"
+		courses.value = "Java etc."
+	}else {
+		cost.value = "Select a housing option"
+		duration.value = "Select a housing option"
+		courses.value = "Select a housing option"
 	}
 })

@@ -11,6 +11,7 @@ router.post("/hire", AceController.postAppForm)
 router.get("/partners", AceController.getPartners)
 router.post("/partners", AceController.postPartners)
 router.get("/application", AceController.getApplication)
+router.post("/application", AceController.postApplication)
 
 
 module.exports = router;
