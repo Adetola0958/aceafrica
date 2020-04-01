@@ -33,9 +33,9 @@ block content
                       input(type="tel" class="form-control telephone" name="telephone" id="telephone")
                     p
                       label(for="description") Partnership Description:
-                      textarea(name="description", cols="70", rows="5" type="text" class="form-control")
+                      textarea(name="description", cols="70", rows="5" type="text" class="form-control" id="describe")
                       div(class="text-center justify-content-center")
-                        button(type="submit" class="mt-3 mb-3 btn main-btn") Submit
+                        button(type="submit" class="mt-3 mb-3 btn main-btn submit" id="submit") Submit
                         if partner
                           p Congratulations #{partner.organizationName} for choosing to partner with us, we 
                             | will get back to you shortly

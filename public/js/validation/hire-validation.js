@@ -22,7 +22,11 @@ const budget = selector("#budget")
 const duration = selector("#duration")
 const businessName = selector("#businessName")
 const location = selector("#location")
+const submit1 = selector("#submit1")
+const submit2 = selector("#submit2")
 
+
+// VALIDATION FOR HIRE
 organizationName.addEventListener("focus" , event => {
 	const orgFeedBack = selector(".name")
 	if (orgFeedBack.classList.contains("blur-feedback-error")) {
@@ -92,6 +96,31 @@ total.addEventListener("blur" , event => {
 	}
 })
 
+submit1.addEventListener("click", event => {
+	const nameValue     = validateNames(organizationName.value.trim()).value
+	const roleValue     = validateNames(role.value.trim()).value
+	const totalValue    = validateAmount(total.value.trim()).value
+
+	try{
+		if(nameValue != null && roleValue != null && totalValue != null) {
+			const errorArea = selector(".submit")
+		    errorArea.textContent = "Loading..."
+		}else {
+			throw {
+				name : "WrongFormValue" , 
+				message : "Please , fill the fields correctly"
+			}
+			event.preventDefault()
+		}
+	}catch(error) {
+	    const errorArea = selector(".submit")
+		errorArea.textContent = error.message 
+		event.preventDefault()
+	}
+})
+
+
+// VALIDATION FOR NEEDING AN APP
 type.addEventListener("focus" , event => {
 	const typeFeedBack = selector(".type")
 	if (typeFeedBack.classList.contains("blur-feedback-error")) {
@@ -227,5 +256,31 @@ duration.addEventListener("blur" , event => {
 	}catch(error) {
 		durationFeedBack.textContent = `${error.message} `
 		durationFeedBack.classList.add("blur-feedback-error")
+	}
+})
+
+submit2.addEventListener("click", event => {
+	const typeValue     = validateNames(type.value.trim()).value
+	const targetValue   = validateNames(target.value.trim()).value
+	const budgetValue   = validateAmount(budget.value.trim()).value
+	const nameValue     = validateNames(businessName.value.trim()).value
+	const locationValue = validateNames(location.value.trim()).value
+	const durationValue = validateDuration(duration.value.trim()).value
+
+	try{
+		if(typeValue != null && targetValue != null && budgetValue != null && nameValue != null && locationValue != null && durationValue != null) {
+			const errorArea = selector(".submit")
+		    errorArea.textContent = "Loading..."
+		}else {
+			throw {
+				name : "WrongFormValue" , 
+				message : "Please , fill the fields correctly"
+			}
+			event.preventDefault()
+		}
+	}catch(error) {
+	    const errorArea = selector(".submit")
+		errorArea.textContent = error.message 
+		event.preventDefault()
 	}
 })

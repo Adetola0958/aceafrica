@@ -20,6 +20,7 @@ const cost = selector("#cost")
 const program = selector("#program")
 const duration = selector("#duration")
 const courses = selector("#courses")
+const submit  = selector("#submit")
 
 
 telephone.addEventListener("focus" , event => {
@@ -146,4 +147,27 @@ program.addEventListener("change", () => {
 		duration.value = "Select a housing option"
 		courses.value = "Select a housing option"
 	}
+})
+
+submit.addEventListener("click", event => {
+	const emailValue = validateEmail(email.value.trim()).value
+	const telValue   = validateMobile(telephone.value.trim()).value
+
+	try{
+		if(emailValue != null && telValue != null) {
+				const errorArea = selector(".submit")
+				errorArea.textContent = "Loading..."
+			}else {
+				throw {
+					name : "WrongFormValue" , 
+					message : "Please , fill the fields correctly"
+				}
+				event.preventDefault()
+			}
+		}catch(error) {
+			const errorArea = selector(".submit")
+			errorArea.textContent = error.message 
+			event.preventDefault()
+	}
+
 })

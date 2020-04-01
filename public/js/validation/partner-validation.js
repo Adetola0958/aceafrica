@@ -16,6 +16,7 @@ let selector = e => document.querySelector(e)
 const organizationName = selector("#organizationName")
 const nature = selector("#nature")
 const telephone = selector("#telephone")
+const describe  = selector("#describe")
 
 organizationName.addEventListener("focus" , event => {
 	const orgFeedBack = selector(".name")
@@ -83,5 +84,28 @@ telephone.addEventListener("blur" , event => {
 	}catch(error) {
 		telFeedBack.textContent = `${error.message} `
 		telFeedBack.classList.add("blur-feedback-error")
+	}
+})
+
+submit.addEventListener("click", event => {
+	const nameValue   = validateNames(organizationName.value.trim()).value
+	const natureValue = validateNames(nature.value.trim()).value
+	const telValue    = validateMobile(telephone.value.trim()).value
+
+	try{
+		if(nameValue != null && natureValue != null && telValue != null && desValue != null) {
+			const errorArea = selector(".submit")
+		    errorArea.textContent = "Loading..."
+		}else {
+			throw {
+				name : "WrongFormValue" , 
+				message : "Please , fill the fields correctly"
+			}
+			event.preventDefault()
+		}
+	}catch(error) {
+	    const errorArea = selector(".submit")
+		errorArea.textContent = error.message 
+		event.preventDefault()
 	}
 })
